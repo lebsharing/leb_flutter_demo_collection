@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:text="Flutter Fragment添加到android"/>
+        <Button
+            android:id="@+id/backBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/arrow_down_float"
+            android:rotation="90"/>
+    </FrameLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fragment 可能被用来展示滑动抽屉、标签内容和 ViewPager 中的页面，或者在单 Activity 应用中，Fragment 可能仅代表正常的屏幕内容。 Flutter 提供了FlutterFragment，以便于开发者们可以在任何使用常规 Fragment 的地方呈现 Flutter 的内容。"/>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/multiEngineLl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/customMainBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="custom flutter main"
+            />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="the below example show FlutterFragment add to native"/>
+    <FrameLayout
+        android:id="@+id/containerFl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </FrameLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>

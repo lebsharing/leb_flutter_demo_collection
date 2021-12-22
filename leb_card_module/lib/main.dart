@@ -1,7 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:leb_card_module/common/constants.dart';
 import 'package:leb_card_module/view/card_detail_page.dart';
+import 'package:leb_card_module/view/template_card1.dart';
 
-void main() => runApp(const MyApp());
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(const MyApp());
+}
+
+///该方法仅用于将FlutterFragment嵌入Native
+void enterDetail() {
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(const DetailApp());
+}
+
+//view level
+void enterCell() {
+  runApp(const CardTemplateOneWidget());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -9,6 +26,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    print("==============Flutter build++++++++++++++++");
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -22,7 +40,52 @@ class MyApp extends StatelessWidget {
         // counter didn't reset back to zero; the application is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      routes: {
+        "/": (context) {
+          return const MyHomePage(title: "Card Module");
+        },
+        Constants.cardDetail: (context) {
+          return const CardDetailPage(
+            fromValue: "leb_card_module",
+          );
+        }
+      },
+      // home: const MyHomePage(title: 'Flutter Demo Home Page'),
+    );
+  }
+}
+
+class DetailApp extends StatelessWidget {
+  const DetailApp({Key? key}) : super(key: key);
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    print("==============Flutter build++Detail++++++++++++++");
+    return MaterialApp(
+      title: 'Card Detail',
+      theme: ThemeData(
+        // This is the theme of your application.
+        //
+        // Try running your application with "flutter run". You'll see the
+        // application has a blue toolbar. Then, without quitting the app, try
+        // changing the primarySwatch below to Colors.green and then invoke
+        // "hot reload" (press "r" in the console where you ran "flutter run",
+        // or press Run > Flutter Hot Reload in a Flutter IDE). Notice that the
+        // counter didn't reset back to zero; the application is not restarted.
+        primarySwatch: Colors.blue,
+      ),
+      routes: {
+        "/": (context) {
+          return const MyHomePage(title: "Card Module");
+        },
+        Constants.cardDetail: (context) {
+          return const CardDetailPage(
+            fromValue: "leb_card_module",
+          );
+        }
+      },
+      // home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
@@ -69,6 +132,11 @@ class _MyHomePageState extends State<MyHomePage> {
     // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
+        leading: BackButton(
+          onPressed: () {
+            SystemNavigator.pop(animated: true);
+          },
+        ),
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
@@ -115,14 +183,15 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
                 OutlinedButton(
                   onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (BuildContext context) {
-                      return CardDetailPage(
-                        fromValue: "leb card module",
-                      );
-                    }));
+                    // Navigator.push(context,
+                    //     MaterialPageRoute(builder: (BuildContext context) {
+                    //   return const CardDetailPage(
+                    //     fromValue: "leb card module",
+                    //   );
+                    // }));
+                    Navigator.pushNamed(context, Constants.cardDetail);
                   },
-                  child: const Text("open flutter module(source)"),
+                  child: const Text("open second page"),
                 )
               ],
             )
