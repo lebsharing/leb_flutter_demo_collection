@@ -1,6 +1,6 @@
 # flutter_widget_demo
 
-A new Flutter project.
+本项目用于介绍Flutter中widget的使用
 
 ## Getting Started
 
