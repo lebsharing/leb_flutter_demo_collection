@@ -43,6 +43,10 @@ class _HomePageState extends State<HomePage> {
   }
 
   initList() {
+    widgetList.add(WidgetInfo(
+        "CompositedTransformTarget",
+        "CompositedTransformTarget + CompositedTransformFollower",
+        RouteManager.compositePage));
     widgetList.add(
         WidgetInfo("Overlay+OverlayEntry", "", RouteManager.simpleOverlay));
     widgetList.add(WidgetInfo("Overlay popup",
