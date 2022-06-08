@@ -51,6 +51,10 @@ class _HomePageState extends State<HomePage> {
         WidgetInfo("Overlay+OverlayEntry", "", RouteManager.simpleOverlay));
     widgetList.add(WidgetInfo("Overlay popup",
         "CompositedTransformTarget + OverlayEntry", RouteManager.popupOverlay));
+    widgetList.add(WidgetInfo("---高级进阶---", "desc", ""));
+    widgetList.add(
+        WidgetInfo("自绘制View", "CustomPaint", RouteManager.customPaintPage));
+    widgetList.add(WidgetInfo("理解布局约束", "", RouteManager.constraintsTestPage));
   }
 }
 
