@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <!--导入 View 类可让您通过绑定表达式引用该类。如：View.VISIBLE-->
+        <import type="android.view.View"/>
+        <!--导入变量-->
+        <variable
+            name="handlers"
+            type="com.leb.jet.modules.test.handler.TestDataBindHandler" />
+        <variable
+            name="presenter"
+            type="com.leb.jet.modules.test.handler.TestDataBindPresenter" />
+        <variable
+            name="testUser"
+            type="com.leb.jet.model.test.TestUser" />
+        <variable
+            name="testAddress"
+            type="com.leb.jet.model.test.TestAddress" />
+        <variable
+            name="testStudent"
+            type="com.leb.jet.model.test.TestStudent" />
+
+    </data>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <ImageView
+                android:id="@+id/backIv"
+                android:layout_width="32dp"
+                android:layout_height="40dp"
+                android:paddingLeft="16dp"
+                android:layout_centerVertical="true"
+                android:scaleType="center"
+                android:background="@mipmap/ic_back"/>
+            <TextView
+                android:id="@+id/titleTv"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:text="Data Binding"
+                android:textStyle="bold"/>
+        </RelativeLayout>
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="数据绑定"/>
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{testUser.firstName + ' ' + testUser.lastName}"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:text="@{String.valueOf(testUser.age)}"/>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:text="两种事件处理方法，无效。(需要在UI中进行赋值)"/>
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <Button
+                        android:id="@+id/shareBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:text="Share(事件处理-方法引用)"
+                        android:onClick="@{handlers::onClickShare}"/>
+                    <Button
+                        android:id="@+id/share2Btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:text="Share(事件处理-监听器绑定)"
+                        android:onClick="@{(view) -> presenter.onSaveClicked(view,testUser.firstName)}"/>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="20dp"
+                    android:text="可观察数据对象--可观察字段"></TextView>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:text="change address"
+                        android:textAllCaps="false"
+                        android:onClick="@{()->presenter.onChangeAddress(testAddress)}"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{testAddress.city}"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:text="@{testAddress.street}"/>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="20dp"
+                    android:text="可观察数据对象--可观察对象"></TextView>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:text="change address"
+                        android:textAllCaps="false"
+                        android:onClick="@{()->presenter.onChangeStudentAddress(testStudent)}"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{testStudent.name}"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:text="@{testStudent.address}"/>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>
