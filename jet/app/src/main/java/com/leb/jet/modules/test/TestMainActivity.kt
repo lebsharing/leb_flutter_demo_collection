@@ -2,7 +2,6 @@ package com.leb.jet.modules.test
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.widget.Toast
 import androidx.fragment.app.FragmentActivity
 import com.leb.jet.databinding.ActivityTestMainBinding
@@ -32,6 +31,10 @@ class TestMainActivity : FragmentActivity(){
         binding.dataBindExBtn.setOnClickListener {
             val dataIntent = Intent(this,TestDataBindActivity::class.java);
             startActivity(dataIntent);
+        }
+        binding.liveDataExBtn.setOnClickListener {
+            val lIntent = Intent(this,TestLiveDataActivity::class.java);
+            startActivity(lIntent);
         }
     }
 }

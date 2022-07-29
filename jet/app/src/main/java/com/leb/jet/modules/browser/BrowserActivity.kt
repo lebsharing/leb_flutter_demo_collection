@@ -47,7 +47,7 @@ class BrowserActivity : FragmentActivity() {
 
     private fun loadData() {
         var url: String? = intent.getStringExtra("url");
-        if(url == null || url?.isEmpty()) {
+        if(url == null || url.isEmpty()) {
             url = testUrl;
         }
         Log.i("jet","" + url);

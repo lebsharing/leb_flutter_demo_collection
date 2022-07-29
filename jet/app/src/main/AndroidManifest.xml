@@ -33,6 +33,7 @@
         <!--test start-->
         <activity android:name=".modules.test.TestMainActivity"></activity>
         <activity android:name=".modules.test.TestDataBindActivity"></activity>
+        <activity android:name=".modules.test.TestLiveDataActivity"/>
         <!--test end-->
     </application>
 

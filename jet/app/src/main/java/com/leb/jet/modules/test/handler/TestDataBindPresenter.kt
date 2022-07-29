@@ -1,5 +1,6 @@
 package com.leb.jet.modules.test.handler
 
+import android.app.Activity
 import android.util.Log
 import android.view.View
 import android.widget.Toast
@@ -8,6 +9,12 @@ import com.leb.jet.model.test.TestStudent
 import kotlin.random.Random
 
 public class TestDataBindPresenter {
+
+    public fun onBackClicked(view: View) {
+        if(view.context is Activity) {
+            ((view.context) as Activity).finish();
+        }
+    }
 
     public fun onSaveClicked(view:View,name:String) {
         Log.i("jet","====onSaveClicked====");
