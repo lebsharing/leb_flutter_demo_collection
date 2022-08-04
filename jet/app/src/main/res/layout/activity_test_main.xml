@@ -46,6 +46,12 @@
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
                 android:text="LiveData &amp; ViewModel"/>
+            <Button
+                android:id="@+id/coroutineExBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:text="Coroutine"/>
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.core.widget.NestedScrollView>
 </LinearLayout>

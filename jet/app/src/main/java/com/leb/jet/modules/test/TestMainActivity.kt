@@ -36,5 +36,9 @@ class TestMainActivity : FragmentActivity(){
             val lIntent = Intent(this,TestLiveDataActivity::class.java);
             startActivity(lIntent);
         }
+        binding.coroutineExBtn.setOnClickListener {
+            val cIntent = Intent(this,TestCoroutineActivity::class.java);
+            startActivity(cIntent);
+        }
     }
 }
