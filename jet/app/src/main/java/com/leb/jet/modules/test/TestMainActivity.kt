@@ -40,5 +40,9 @@ class TestMainActivity : FragmentActivity(){
             val cIntent = Intent(this,TestCoroutineActivity::class.java);
             startActivity(cIntent);
         }
+        binding.dataStoreExBtn.setOnClickListener {
+            val cIntent = Intent(this,TestDataStoreActivity::class.java);
+            startActivity(cIntent);
+        }
     }
 }

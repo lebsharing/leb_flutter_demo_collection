@@ -14,7 +14,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Jet">
+        android:theme="@style/Theme.Jet"
+        android:name=".common.JetApplication">
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -36,6 +37,7 @@
         <activity android:name=".modules.test.TestLiveDataActivity"/>
         <activity android:name=".modules.test.paging.TestPagingActivity"/>
         <activity android:name=".modules.test.TestCoroutineActivity"/>
+        <activity android:name=".modules.test.TestDataStoreActivity"/>
         <!--test end-->
     </application>
 

@@ -60,41 +60,38 @@ dependencies {
     // For control over item selection of both touch and mouse driven selection
     implementation "androidx.recyclerview:recyclerview-selection:1.1.0"
 
-    def lifecycle_version = "2.5.0"
-    def arch_version = "2.1.0"
-
     // ViewModel
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifeCycleVersion")
     // ViewModel utilities for Compose
 //    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_version")
+
     // LiveData
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifeCycleVersion")
     // Lifecycles only (without ViewModel or LiveData)
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifeCycleVersion")
     // Saved state module for ViewModel
-    implementation("androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifeCycleVersion")
     // Annotation processor
-    kapt("androidx.lifecycle:lifecycle-compiler:$lifecycle_version")
-    // alternately - if using Java8, use the following instead of lifecycle-compiler
-//    implementation("androidx.lifecycle:lifecycle-common-java8:$lifecycle_version")
-    // optional - helpers for implementing LifecycleOwner in a Service
-//    implementation("androidx.lifecycle:lifecycle-service:$lifecycle_version")
-    // optional - ProcessLifecycleOwner provides a lifecycle for the whole application process
-//    implementation("androidx.lifecycle:lifecycle-process:$lifecycle_version")
-    // optional - ReactiveStreams support for LiveData
-//    implementation("androidx.lifecycle:lifecycle-reactivestreams-ktx:$lifecycle_version")
+    kapt("androidx.lifecycle:lifecycle-compiler:$lifeCycleVersion")
     // optional - Test helpers for LiveData
-    testImplementation("androidx.arch.core:core-testing:$arch_version")
+    testImplementation("androidx.arch.core:core-testing:$testCoreVersion")
 
     //初始化viewmodel需要
     implementation "androidx.activity:activity-ktx:1.5.0"//新添加
     implementation "androidx.fragment:fragment-ktx:1.5.1"
 
-    def paging_version = "3.1.1"
-    implementation "androidx.paging:paging-runtime:$paging_version"
+    implementation "androidx.paging:paging-runtime-ktx:$pagingVersion"
     // optional - Jetpack Compose integration
 //    implementation "androidx.paging:paging-compose:1.0.0-alpha15"
 
     //协程
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9'
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
+    //Preferences DataStore
+    implementation "androidx.datastore:datastore-preferences:1.0.0"
+    //Typed DataStore
+    implementation "androidx.datastore:datastore:1.0.0"
+
+    implementation "androidx.multidex:multidex:$multidexVersion"
+
 }
