@@ -56,3 +56,7 @@
     
     2、状态管理
     (官方文档)[https://developer.android.com/jetpack/compose/state?hl=zh-cn]
+    remember/rememberSaveable/
+
+    注意：
+    remember 函数仅在可组合项包含在组合中时起作用
