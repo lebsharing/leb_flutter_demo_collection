@@ -4,6 +4,8 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -78,9 +80,10 @@ private fun MyApp() {
 }
 
 @Composable
-private fun Greetings(names: List<String> = listOf("Word", "Compose", "Java")) {
-    Column(modifier = Modifier.padding(vertical = 4.dp)) {
-        for (name in names) {
+private fun Greetings(names: List<String> = List(1000){"$it"}) {
+    LazyColumn(modifier = Modifier.padding(vertical = 4.dp)) {
+        //请确保导入 androidx.compose.foundation.lazy.items，因为 Android Studio 默认会选择另一个 items 函数。
+        items(items = names) { name ->
             Greeting(name = name)
         }
     }
