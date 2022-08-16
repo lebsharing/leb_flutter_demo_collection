@@ -1,6 +1,10 @@
 #ComposeTutorial
     本项目是根据官方Compose教程，进行练习使用。
     官网教程地址：https://developer.android.com/jetpack/compose/tutorial
+    
+    branch说明：
+    【main】官网教程地址：https://developer.android.com/jetpack/compose/tutorial
+    【baseCompose】:官网教程：https://developer.android.com/courses/pathways/compose
 
 #### Compose编程思想
     官网文档：https://developer.android.com/jetpack/compose/mental-model?continue=https%3A%2F%2Fdeveloper.android.com%2Fcourses%2Fpathways%2Fcompose%23article-https%3A%2F%2Fdeveloper.android.com%2Fjetpack%2Fcompose%2Fmental-model
@@ -41,3 +45,11 @@
     
     2、将Jetpack Compose添加到现有的项目中
         根据[添加Jetpack Compose 工具包依赖项] 中所述，将Jetpack Compse添加到应用
+
+#### 使用入门
+    1、可组合函数
+    可组合函数是带有@Composable注解的常规函数。这类函数可以掉用其他常规函数。
+    @Composable
+    private fun Greeting(name: String) {
+        Text(text = "Hello $name!")
+    }
