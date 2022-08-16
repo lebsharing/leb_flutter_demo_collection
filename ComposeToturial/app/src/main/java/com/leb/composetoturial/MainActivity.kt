@@ -67,21 +67,30 @@ fun DefaultPreview() {
 }
 
 @Composable
-private fun MyApp(names: List<String> = listOf("Word", "Compose", "Java")) {
-    Surface(color = MaterialTheme.colorScheme.background) {
-//        Greeting(name = "Android.Beijing")
-        Column() {
-            for (name in names) {
-                Greeting(name = name)
-            }
+private fun MyApp() {
+    //TODO by 和= 的区别？？；by 属与委托
+    var shouldShowOnboarding by remember { mutableStateOf(true) }
+    if (shouldShowOnboarding) {
+        OnboardingScreen(onContinueClicked = { shouldShowOnboarding = false })
+    } else {
+        Greetings()
+    }
+}
+
+@Composable
+private fun Greetings(names: List<String> = listOf("Word", "Compose", "Java")) {
+    Column(modifier = Modifier.padding(vertical = 4.dp)) {
+        for (name in names) {
+            Greeting(name = name)
         }
     }
 }
 
 @Composable
-fun OnboardingScreen() {
+fun OnboardingScreen(onContinueClicked: () -> Unit) {
     // TODO: This state should be hoisted
-    var shouldShowOnboarding by remember { mutableStateOf(true) }
+    //by 属性委托
+//    var shouldShowOnboarding by remember { mutableStateOf(true) }
 
     Surface {
         Column(
@@ -92,7 +101,7 @@ fun OnboardingScreen() {
             Text("Welcome to the Basics Codelab!")
             Button(
                 modifier = Modifier.padding(vertical = 24.dp),
-                onClick = { shouldShowOnboarding = false }
+                onClick = onContinueClicked
             ) {
                 Text("Continue")
             }
@@ -104,6 +113,6 @@ fun OnboardingScreen() {
 @Composable
 fun OnboardingPreview() {
     ComposeTutorialTheme() {
-        OnboardingScreen()
+        OnboardingScreen(onContinueClicked = {})
     }
 }

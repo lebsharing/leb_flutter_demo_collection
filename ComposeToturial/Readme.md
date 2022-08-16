@@ -53,3 +53,6 @@
     private fun Greeting(name: String) {
         Text(text = "Hello $name!")
     }
+    
+    2、状态管理
+    (官方文档)[https://developer.android.com/jetpack/compose/state?hl=zh-cn]
