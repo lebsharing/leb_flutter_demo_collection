@@ -26,4 +26,5 @@ ext {
     testCoreVersion = "2.1.0"
     lifeCycleVersion = "2.5.0"
     multidexVersion = "2.0.1"
+    workVersion = "2.7.1"
 }
