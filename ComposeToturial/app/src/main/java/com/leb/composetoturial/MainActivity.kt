@@ -1,5 +1,6 @@
 package com.leb.composetoturial
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -12,6 +13,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
@@ -36,9 +38,23 @@ class MainActivity : ComponentActivity() {
                 ) {
 //                    Greeting("Android.Google")
 //                    MessageCard(msg = Message("ZhangSan", "Beijing Welcome you!!!"))
-                    Conversation(messages = SampleData.conversationSample)
+//                    Conversation(messages = SampleData.conversationSample)
+//                    testEntrance()
+                    PhotographerCard()
                 }
             }
+        }
+    }
+}
+
+@Composable
+private fun testEntrance() {
+    Column() {
+        OutlinedButton(onClick = {
+//            val l = Intent(this,LayoutComposeActivity::class.java)
+
+        }) {
+            Text(text = "Layout")
         }
     }
 }
@@ -104,8 +120,9 @@ fun Greeting(name: String) {
 @Preview
 @Composable
 fun PreviewConversation() {
-    ComposeToturialTheme() {
-        Conversation(messages = SampleData.conversationSample)
+    ComposeToturialTheme {
+        testEntrance()
+//        Conversation(messages = SampleData.conversationSample)
     }
 }
 
