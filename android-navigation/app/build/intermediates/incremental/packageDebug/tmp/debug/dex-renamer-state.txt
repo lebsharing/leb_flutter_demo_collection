@@ -1,0 +1,13 @@
+#Fri Aug 19 17:39:44 CST 2022
+path.3=9/classes.dex
+path.2=11/classes.dex
+path.1=0/classes.dex
+path.0=classes.dex
+base.3=/Users/lingoace/leb/self_workspace/leb_flutter_demo_collection/android-navigation/app/build/intermediates/dex/debug/mergeProjectDexDebug/9/classes.dex
+base.2=/Users/lingoace/leb/self_workspace/leb_flutter_demo_collection/android-navigation/app/build/intermediates/dex/debug/mergeProjectDexDebug/11/classes.dex
+base.1=/Users/lingoace/leb/self_workspace/leb_flutter_demo_collection/android-navigation/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
+base.0=/Users/lingoace/leb/self_workspace/leb_flutter_demo_collection/android-navigation/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
+renamed.3=classes4.dex
+renamed.2=classes3.dex
+renamed.1=classes2.dex
+renamed.0=classes.dex
