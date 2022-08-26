@@ -1,4 +1,0 @@
-com/example/android/codelabs/navigation/DataBindingTriggerClass.java
- com.example.android.codelabs.navigation.DataBindingTriggerClass
-com/example/android/codelabs/navigation/BuildConfig.java
- com.example.android.codelabs.navigation.BuildConfig
